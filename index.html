@@ -5,301 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TQE-2026-1 · Inter-Annotator Agreement</title>
   <link rel="icon" type="image/png" href="favicon.ico" />
-
-
-  <style>
-    /* ── Design tokens ───────────────────────────────────────────────── */
-    :root {
-      --pink:        #ef91c6;
-      --blue-light:  #50A5E6;
-      --blue-mid:    #2b7bb9;
-      --blue-dark:   #1c6399;
-      --bg:          #F5F7F9;
-      --text:        #1a1a2e;
-      --text-muted:  #5a6478;
-      --border:      #e0e6ee;
-      --card-bg:     #ffffff;
-      --accent-green:#60ff6c;
-      --radius:      10px;
-      --transition:  180ms ease;
-    }
-
-    /* ── Reset & base ────────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { font-size: 16px; scroll-behavior: smooth; }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      line-height: 1.65;
-    }
-
-    /* ── Header ──────────────────────────────────────────────────────── */
-    header {
-      background: var(--card-bg);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2.5rem;
-    }
-
-    .header-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 0 1.75rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
-
-    .logo-wrap img {
-      height: 54px;
-      width: auto;
-      display: block;
-    }
-
-    .header-eyebrow {
-      font-family: Arial, sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue-mid);
-      margin-bottom: 0.3rem;
-    }
-
-    .header-title {
-      font-family: Arial, sans-serif;
-      font-size: 2.1rem;
-      line-height: 1.1;
-      color: var(--blue-mid);
-      letter-spacing: -0.01em;
-    }
-
-
-
-    .header-subline {
-      margin-top: 0.45rem;
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      letter-spacing: 0.01em;
-    }
-
-    /* pink accent bar under header */
-    .header-accent {
-      height: 3px;
-      background: linear-gradient(90deg, var(--pink) 0%, var(--blue-light) 60%, transparent 100%);
-    }
-
-    /* ── Main ────────────────────────────────────────────────────────── */
-    main {
-      flex: 1;
-      max-width: 900px;
-      margin: 0 auto;
-      width: 100%;
-      padding: 3rem 2.5rem 4rem;
-    }
-
-    /* ── Section label ───────────────────────────────────────────────── */
-    .section-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--blue-mid);
-      margin-bottom: 0.65rem;
-    }
-
-    /* ── About block ─────────────────────────────────────────────────── */
-    .about {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem 2rem;
-      margin-bottom: 2.75rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 4px;
-      background: linear-gradient(180deg, var(--pink), var(--blue-light));
-      border-radius: var(--radius) 0 0 var(--radius);
-    }
-
-    .about p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-
-    }
-
-    /* ── Projects grid ───────────────────────────────────────────────── */
-    .projects-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 1.1rem;
-    }
-
-    .projects-title {
-      font-family: Arial, sans-serif;
-      font-size: 1.25rem;
-      color: var(--text);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-    }
-
-    @media (max-width: 600px) {
-      .projects-grid { grid-template-columns: 1fr; }
-      .header-inner { flex-direction: column; gap: 1rem; }
-      main { padding: 2rem 1.25rem 3rem; }
-    }
-
-    /* ── Project card ────────────────────────────────────────────────── */
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.6rem 1.75rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
-    }
-
-    .card:hover {
-      box-shadow: 0 6px 24px rgba(44, 123, 185, 0.10);
-      border-color: var(--blue-light);
-      transform: translateY(-2px);
-    }
-
-    .card-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--blue-dark);
-      background: #e8f2fb;
-      border-radius: 4px;
-      padding: 0.2rem 0.6rem;
-      width: fit-content;
-    }
-
-    .card-badge::before {
-      content: '';
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--blue-light);
-      flex-shrink: 0;
-    }
-
-    .card-title {
-      font-family: Arial, sans-serif;
-      font-size: 1.05rem;
-      color: var(--text);
-      line-height: 1.3;
-    }
-
-    .card-summary {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      flex: 1;
-    }
-
-    .card-summary em {
-      color: #aab4c4;
-      font-style: italic;
-    }
-
-    .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 0.25rem;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--blue-mid);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color var(--transition), color var(--transition);
-      width: fit-content;
-    }
-
-    .card-link:hover {
-      color: var(--blue-dark);
-      border-bottom-color: var(--blue-mid);
-    }
-
-    .card-link svg {
-      flex-shrink: 0;
-      transition: transform var(--transition);
-    }
-
-    .card-link:hover svg {
-      transform: translateX(3px);
-    }
-
-    /* ── Footer ──────────────────────────────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      background: var(--card-bg);
-      padding: 1.25rem 2.5rem;
-    }
-
-    .footer-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-text {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
-    .footer-text strong {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .footer-dot {
-      margin: 0 0.4em;
-      opacity: 0.4;
-    }
-
-    .footer-pip {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .pip {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--pink), var(--blue-light));
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -323,27 +29,78 @@
     <section class="about" aria-labelledby="about-label">
       <p class="section-label" id="about-label">About this project</p>
       <p>
-        This dashboard tracks inter-annotator agreement for the TQE-2026-1 evaluation round. A team of trained evaluators is working toward a shared agreement threshold by annotating the same translation quality evaluation projects in Label Studio in the domain of generative AI, using a customized MQM typology developed for this content type. After each project, agreement is measured across five levels: span detection, span boundaries, error category, subcategory, and impact rating; findings are used to calibrate the team for the next round. Reports are generated from a <a href="https://github.com/locessentials/translation-quality-evaluation/blob/main/6_annotator_agreement/Translation_Annotator_Agreement.ipynb" target="_blank">Jupyter notebook</a> and linked below. The goal is to reach deployable, consistent annotations that can be used to train evaluators, give feedback to translators, and fine-tune LLM-based quality evaluation systems.
+        This dashboard tracks inter-annotator agreement for the TQE-2026-1 evaluation project. A team of trained evaluators is working toward a shared agreement threshold by annotating the same translation quality evaluation projects in Label Studio in the domain of generative AI, using a customized MQM typology. After each project, agreement is measured across five levels: span detection, span boundaries, error category, subcategory, and impact rating; findings are used to calibrate the team for the next training round. Reports are generated from a <a href="https://github.com/locessentials/translation-quality-evaluation/blob/main/6_annotator_agreement/Translation_Annotator_Agreement.ipynb" target="_blank">Jupyter notebook</a> and linked below. The goal is to reach deployable, consistent annotations that can be used to train evaluators, give feedback to translators, and fine-tune LLM-based quality evaluation systems.
       </p>
     </section>
+
+    <!-- Linguistic Assets -->
+    <div class="assets-header">
+      <h2 class="assets-title">Linguistic Assets</h2>
+    </div>
+
+    <div class="assets-grid">
+
+      <!-- Overall Specifications -->
+      <article class="assets-card">
+        <p class="assets-card-badge">Specifications</p>
+        <h3 class="assets-card-title">Overall Specifications<br></h3>
+        <p class="assets-card-summary"><strong>Domain:</strong> Generative AI</p>
+        <p class="assets-card-summary"><strong>Language families and variants:</strong> Largely Latin American Spanish, U.S. English</p>
+        <p class="assets-card-summary"><strong>Audience - broadly:</strong> Spanish and English speakers in Latin America (including the United States)</p>
+        <p class="assets-card-summary"><strong>Correspondence:</strong> Whole document adaptation</p>
+      </article>
+
+      <!-- Glossary & Examples -->
+      <article class="assets-card">
+        <p class="assets-card-badge">Glossary & Error Examples</p>
+        <h3 class="assets-card-title">GAI Glossary<br></h3>
+        <p class="assets-card-summary">
+          GAI terminology, including contradictions in regional terminology to be navigated in translation
+        </p>
+        <a class="assets-card-link" href="TQE-2026-1-Project-2.html" target="_blank">
+          View glossary
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <h3 class="assets-card-title">MQM Error Examples<br></h3>
+        <p class="assets-card-summary">
+          Examples of errors that could be tagged with multiple labels, and the classification we've agreed on for this project.
+        </p>
+        <a class="assets-card-link" href="TQE-2026-1-Project-2.html" target="_blank">
+          View example errors
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+    </div>
 
     <!-- Projects -->
     <div class="projects-header">
       <h2 class="projects-title">Evaluation Projects</h2>
-      <span class="section-label" style="margin-bottom:0;">Round 2026-1</span>
     </div>
 
     <div class="projects-grid">
 
       <!-- Project 1 -->
-      <article class="card">
-        <span class="card-badge">Project 1</span>
-        <h3 class="card-title">Ecosistema digital<br><span style="font-family:'DM Sans',sans-serif; font-size:0.82rem; font-weight:300; color:var(--text-muted);">es-LATAM → en-US evaluation</span></h3>
-        <p class="card-summary">
-          <em>This project evaluates a translation of a Spanish-language academic paper on generative AI and algorithmic governmentality. The source text covers the technical foundations of large language models and contextualizes how AI is being integrated into digital ecosystems across industries.</em>
+      <article class="project-card">
+        <p class="project-card-badge">Project 1</p>
+        <h3 class="project-card-title">Ecosistema digital<br><span>es-LATAM → en-US evaluation</span></h3>
+        <p class="project-card-summary">
+          This project evaluates a section of a translation of a Spanish-language academic paper on algorithmic governmentality. The source text covers the technical foundations of large language models and contextualizes how AI is being integrated into digital ecosystems across industries.
         </p>
-        <a class="card-link" href="TQE-2026-1-Project-1.html" target="_blank">
-          View HTML report
+        <span><a class="project-card-link" href="https://revistas.ort.edu.uy/inmediaciones-de-la-comunicacion/article/view/3931" target="_blank" rel="noopener noreferrer">Full source text and target translation</a></span>
+        <h4 class="project-card-subtitle">Project-specific Specifications<br></h4>
+        <p class="assets-card-summary"><strong>Subdomains:</strong> Digital platforms, communication studies, political economy of technology, technical infrastructure of AI</p>
+        <p class="assets-card-summary"><strong>Text type:</strong> Academic article</p>
+        <p class="assets-card-summary"><strong>Purpose:</strong> Informative</p>
+        <p class="assets-card-summary"><strong>Author perspective:</strong> Academic</p>
+        <p class="assets-card-summary"><strong>Audience:</strong> Academics, Researchers, Students, Policy makers</p>
+        <p class="assets-card-summary"><strong>Content complexities:</strong> The paper requires fluency in two specialized registers simultaneously, critical social theory and technical AI vocabulary, each with established terminology in English-language scholarship. The English text shows some syntactic awkwardness that raises questions about whether machine translation was used and on the accuracy of the terminology choices.</p>
+        <a class="project-card-link" href="TQE-2026-1-Project-1.html" target="_blank">
+          View Agreement report
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -351,18 +108,55 @@
       </article>
 
       <!-- Project 2 -->
-      <article class="card">
-        <span class="card-badge">Project 2</span>
-        <h3 class="card-title">WIPO-GAI Patents<br><span style="font-family:'DM Sans',sans-serif; font-size:0.82rem; font-weight:300; color:var(--text-muted);">en-US → es-LATAM evaluation</span></h3>
-        <p class="card-summary">
-          <em>This project evaluates a translation of the WIPO Patent Landscape Report on Generative AI, which covers the rapid growth of GenAI patent activity following the launch of ChatGPT, including the technological drivers behind that growth and the expanding range of real-world applications for large language models.</em>
+      <article class="project-card">
+        <p class="project-card-badge">Project 2</p>
+        <h3 class="project-card-title">WIPO-GAI Patents<br><span>en-INTL → es-LATAM evaluation</span></h3>
+        <p class="project-card-summary">
+          This project evaluates a translated secion of the WIPO Patent Landscape Report on Generative AI, which covers the rapid growth of patent activity following the launch of ChatGPT, covering technological drivers and the expanding range of real-world applications.
         </p>
-        <a class="card-link" href="TQE-2026-1-Project-2.html" target="_blank">
-          View HTML report
+        <p class="project-card-summary">
+          <strong>Note:</strong> A target text was produced internally for the purposes of this project.
+        </p>
+        <span class="project-card-summary"><a class="project-card-link" href="https://www.wipo.int/web-publications/patent-landscape-report-generative-artificial-intelligence-genai/en/index.html" target="_blank" rel="noopener noreferrer">Full source text</a></span>
+        <h4 class="project-card-subtitle">Project-specific Specifications<br></h4>
+        <p class="assets-card-summary"><strong>Subdomains:</strong> Intellectual property, machine learning architectures, corporate R&D, patent analytics</p>
+        <p class="assets-card-summary"><strong>Text type:</strong> Technical report</p>
+        <p class="assets-card-summary"><strong>Purpose:</strong> Informative</p>
+        <p class="assets-card-summary"><strong>Author perspective:</strong> Subject matter expert</p>
+        <p class="assets-card-summary"><strong>Audience:</strong> Investors, developers, patent lawyers</p>
+        <p class="assets-card-summary"><strong>Content complexities:</strong> High density of technical acronyms (GANs, VAEs, LLMs, MLLMs); proper nouns requiring no translation (model names, company names, product names); ranked list structures with enumerated claims; genre-mixing of legal/IP register with technology journalism register</p>
+        <a class="project-card-link" href="TQE-2026-1-Project-2.html" target="_blank">
+          View Agreement report
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card">
+        <p class="project-card-badge">Project 3</p>
+        <h3 class="project-card-title">Derechos de Autor<br><span>es-MX → en-US evaluation</span></h3>
+        <p class="project-card-summary">
+          This text is legal commentary from a Mexican law firm examining how the Federal Law on Copyright (LFDA) fails to address AI-assisted authorship, with two proposed institutional reforms. We evaluated an adapted version of the original Spanish.
+        </p>
+        <p class="project-card-summary">
+          <strong>Note:</strong> We did not use the English translation provided within a PDF version of this content. Instead, a target text was produced internally for the purposes of this project.
+        </p>
+        <span class="project-card-summary"><a class="project-card-link" href="https://www.mgps.com.mx/derechos-de-autor-e-inteligencia-artificial/" target="_blank" rel="noopener noreferrer">Full source text</a></span>
+        <h4 class="project-card-subtitle">Project-specific Specifications<br></h4>
+        <p class="assets-card-summary"><strong>Subdomains:</strong> Intellectual property, Mexican law, AI and copyright</p>
+        <p class="assets-card-summary"><strong>Text type:</strong> Legal commentary</p>
+        <p class="assets-card-summary"><strong>Purpose:</strong> Informative</p>
+        <p class="assets-card-summary"><strong>Author perspective:</strong> Legal professional</p>
+        <p class="assets-card-summary"><strong>Audience:</strong> Government, Policy makers</p>
+        <p class="assets-card-summary"><strong>Content complexities:</strong> The text blends legal, academic, and essayistic registers that must remain distinguishable throughout. Rhetorical question sequences function as cumulative discursive units rather than independent sentences. The Dark Forest Theory and Turing Test/TTR are introduced as analogies and then recalled as structural through-lines — requiring consistent terminology across distant passages to preserve their rhetorical weight.</p>
+        <!-- <a class="project-card-link" href="TQE-2026-1-Project-2.html" target="_blank">
+          View Agreement report
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a> -->
       </article>
 
     </div>
