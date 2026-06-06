@@ -27,14 +27,14 @@
 
     <!-- About -->
     <section class="about" aria-labelledby="about-label">
-      <p class="section-label" id="about-label">About this project</p>
+      <p class="section-label" id="about-label">About this </p>
       <p>
         This dashboard tracks inter-annotator agreement for the TQE-2026-1 evaluation project series. This effort has two main objectives: first, to train a team of professional evaluators to produce consistent, deployable annotations of translation quality; and second, to use the annotations to draw conclusions about corpus-informed, document-level automatic translation quality.
       </p>
 
-      <button class="about-toggle" id="about-toggle" onclick="toggleAbout()">Read more ▾</button>
+      <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
 
-      <div class="about-expandable" id="about-body">
+      <div class="about-expandable">
         <p>
           Training phase projects (1-4) serve the primary purpose of training our team of evaluators, i.e. improving inter-annotator agreement. Production phase projects (7-8) provide two generated translations of the same source content, one corpus-informed and one not. We also completed onboarding projects (0, -1), where our evaluators were introduced to annotation in Label Studio following the MQM typology.
           <br><br>
@@ -105,17 +105,19 @@
       <article class="project-card">
         <p class="project-card-badge">Project 8</p>
         <h3 class="project-card-title">Zombie Trainers and a New Era of Forced Labor<br><span>eng-USA → esp-MEX evaluation</span></h3>
-        <hr>
         <p class="project-card-summary">
           This article defines a type of "zombie trainer", people whose activities are used to train AI systems without their knowledge or consent. These trainers include people who have their conversations recorded when they visit an individual in prison, Amazon drivers, and even children interacting with ed-tech apps.
         </p>
+        
+        <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
+
+        <div class="about-expandable">
         <p class="assets-card-summary"><strong>Subdomains:</strong> Data workers, data collection, surveillance, AI ethics</p>
         <p class="assets-card-summary"><strong>Text type:</strong> News article</p>
         <p class="assets-card-summary"><strong>Purpose:</strong> Informative</p>
         <p class="assets-card-summary"><strong>Author perspective:</strong> Reporter</p>
         <p class="assets-card-summary"><strong>Audience:</strong> General public</p>
         <p class="assets-card-summary"><strong>Content complexities:</strong> The subject of the article is a type of "zombie trainer". The concept system behind the English term "zombie trainer" (its broader definition and other <em>types</em>) needs to be navigated appropriately in the translation. The concluding paragraphs are based upon employment law in the United States. Adapt these paragraphs so that they reference the U.S. legal context discussed and then state the situation in the Mexican legal context.</p>
-        <hr>
         <span class="project-card-summary"><a class="project-card-link" href="https://data-workers.org/adrienne/" target="_blank" rel="noopener noreferrer">
           Full source text           
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -134,23 +136,26 @@
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a> -->
+        </div>
       </article>
 
       <!-- Project 7 -->
       <article class="project-card">
         <p class="project-card-badge">Project 7</p>
         <h3 class="project-card-title">I Stumbled Across My Boyfriend's ChatGPT and It Ended Our Relationship<br><span>eng-USA → esp-MEX evaluation</span></h3>
-        <hr>
         <p class="project-card-summary">
             Lindsey Hall recounts the discovery of her boyfriend's private ChatGPT conversations, where he expressed deep uncertainties and a lack of attraction towards her. This revelation, found accidentally on his laptop, led to the painful end of their relationship. The narrative explores the profound humiliation and emotional distress caused by seeing herself reduced to a list of liabilities in his AI-assisted self-reflection.
         </p>
+
+        <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
+
+        <div class="about-expandable">
         <p class="assets-card-summary"><strong>Subdomains:</strong> Personal narrative, modern dating, AI in relationships, Breaking up</p>
         <p class="assets-card-summary"><strong>Text type:</strong> Longform post, dating column</p>
         <p class="assets-card-summary"><strong>Purpose:</strong> Entertainment</p>
         <p class="assets-card-summary"><strong>Author perspective:</strong> Content creator</p>
         <p class="assets-card-summary"><strong>Audience:</strong> General public</p>
         <p class="assets-card-summary"><strong>Content complexities:</strong> This personal narrative is written in the style of a dating column, a genre that is recognizable to many Americans from the show Sex in the City. (Indeed, the author included a picture of Carrie in the post.) This genre is not common in the Spanish speaking world. The closest related genre in Spanish is that of "chronicle," narrative or storytelling that relates events from history, culture, or significant occurrences in chronological order. The text follows a contemporary "long-post" format, with short paragraphs and the repetition of ideas. Combine paragraphs as necessary to make the content flow well in Spanish. The narrative is relatable and gives a sense of "pena ajena" (a cringy feeling for what someone else has gone through). To maintain the sense of personal closeness and relatability between the writer and the reader, the Spanish needs to read naturally. Literal translations and odd constructions will break the spell. The post uses the word "shit" twice - the translation of cuss words is highly difficult due to their embeddedness in context and culture. Consider the context, and the intended sense and weight, and then choose appropriate Spanish to convey that, using groserías or not. The literal translation of "shit" (mierda) should only be selected if it fits the context. You may translate "shit" two different ways if the context calls for it.</p>
-        <hr>
         <span class="project-card-summary"><a class="project-card-link" href="https://lindseyhallwrites.substack.com/p/i-read-my-boyfriends-chatgpt-and" target="_blank" rel="noopener noreferrer">
           Full source text           
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -169,23 +174,26 @@
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a> -->
+        </div>
       </article>
 
       <!-- Project 6 -->
       <article class="project-card">
         <p class="project-card-badge">Project 6</p>
         <h3 class="project-card-title">What Artificial Intelligence Is Not<br><span>eng-USA → esp-MEX evaluation</span></h3>
-        <hr>
         <p class="project-card-summary">
           This article clarifies common misconceptions about artificial intelligence (AI). The author explains that AI is not merely an algorithm, a model, or solely robots. It's not neutral. In fact, the author questions whether the 'artificial' distinction matters, given that it's humans who build and react to AI.
         </p>
+
+        <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
+
+        <div class="about-expandable">
         <p class="assets-card-summary"><strong>Subdomains:</strong> AI literacy, AI ethics, philosophy of technology</p>
         <p class="assets-card-summary"><strong>Text type:</strong> Essay</p>
         <p class="assets-card-summary"><strong>Purpose:</strong> Persuasive</p>
         <p class="assets-card-summary"><strong>Author perspective:</strong> Educational</p>
         <p class="assets-card-summary"><strong>Audience:</strong> Educated readers</p>
         <p class="assets-card-summary"><strong>Content complexities:</strong> Each paragraph of the essay begins with a short negation sentence ("AI is not X") that establishes cohesion and a clear anaphoric link within and across paragraphs. The repetitions of vocabulary (for example, algorithm... algorithm, robots... robots) are used to achieve a sense of accumulation and rhetorical emphasis. The short sentences plus the repetition of vocabulary would sound choppy, clunky and incomplete in Spanish, so sentences need to be reformulated while maintaining the sense of accumulation and rhetorical emphasis and the clear anaphoric link among paragraphs. The explanations that follow the negation sentences employ longer prose, and the simplicity in the way that ideas are presented needs to be maintained in Spanish. The reference to "Washington" is U.S. centric and should be replaced with a culturally equivalent alternative that carries the same referential ambiguity for a Mexican audience.</p>
-        <hr>
         <span class="project-card-summary"><a class="project-card-link" href="https://lareviewofbooks.org/blog/provocations/artificial-intelligence/" target="_blank" rel="noopener noreferrer">
           Full source text           
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -204,23 +212,26 @@
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+        </div>
       </article>
 
       <!-- Project 5 -->
       <article class="project-card">
         <p class="project-card-badge">Project 5</p>
         <h3 class="project-card-title">Does my algorithm have a mental-health problem?<br><span>eng-USA → es-419 evaluation</span></h3>
-        <hr>
         <p class="project-card-summary">
           This text is a technology opinion piece published in Aeon arguing that deep learning algorithms, modeled on the architecture of the human brain, are increasingly susceptible to human-like failure modes, from hallucination and superstition to bias and catastrophic forgetting. We evaluated a translation of the original English into Latin American Spanish.
         </p>
+
+        <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
+
+        <div class="about-expandable">
         <p class="assets-card-summary"><strong>Subdomains:</strong> Technology criticism, AI ethics, cognitive science</p>
         <p class="assets-card-summary"><strong>Text type:</strong> Essay</p>
         <p class="assets-card-summary"><strong>Purpose:</strong> Persuasive</p>
         <p class="assets-card-summary"><strong>Author perspective:</strong> Technology critic/philosopher</p>
         <p class="assets-card-summary"><strong>Audience:</strong> General educated public, technology professionals</p>
         <p class="assets-card-summary"><strong>Content complexities:</strong> The register alternates deliberately between colloquial wit, technical explanation, and social critique. The humor in particular risks being flattened out in Spanish if literal sentence-by-sentence translation is used. Be careful with the transitions between these tones of voice. The English text features many short sentences that work well for that language, but that don't work at all for Spanish. In Spanish, combine short sentences into longer prose, so that the content does not sound too abrupt. The piece also makes implicit logical leaps where the connective tissue between ideas is intentionally understated. Do not fill in these gaps or make them explicit when you write your version of text; they are part of the author's argumentative style.</p>
-        <hr>
         <span class="project-card-summary"><a class="project-card-link" href="https://aeon.co/ideas/made-in-our-own-image-why-algorithms-have-mental-health-problems" target="_blank" rel="noopener noreferrer">
           Full source text           
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -239,6 +250,7 @@
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+        </div>
       </article>
 
     </div>
@@ -254,17 +266,19 @@
       <article class="project-card">
         <p class="project-card-badge">Project 4</p>
         <h3 class="project-card-title">The Delusion at the Center of the A.I. Boom<br><span>eng-USA → esp-MEX evaluation</span></h3>
-        <hr>
         <p class="project-card-summary">
           This text is a technology opinion piece published in Slate arguing that AI solutionism, the impulse to treat AI as a fix for every human problem, misrepresents what AI can and cannot do. We evaluated a translation of the original English into Latin American Spanish.
         </p>
+
+        <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
+        
+        <div class="about-expandable">
         <p class="assets-card-summary"><strong>Subdomains:</strong> Technology criticism, AI ethics, digital culture</p>
         <p class="assets-card-summary"><strong>Text type:</strong> Opinion/editorial</p>
         <p class="assets-card-summary"><strong>Purpose:</strong> Persuasive</p>
         <p class="assets-card-summary"><strong>Author perspective:</strong> Technology critic/philosopher</p>
         <p class="assets-card-summary"><strong>Audience:</strong> General educated public, technology professionals</p>
         <p class="assets-card-summary"><strong>Content complexities:</strong> The piece blends conversational and analytical registers, shifting between personal anecdote, cultural critique, and philosophical argument in ways that must feel natural rather than abrupt in translation. The structured argumentation (point 1, point 2, point 3) characteristic of English opinion writing may need reformulation to reflect the freer organizational patterns preferred in Latin American Spanish.</p>
-        <hr>
         <span class="project-card-summary"><a class="project-card-link" href="https://slate.com/technology/2023/03/chatgpt-artificial-intelligence-solutionism-hype.html" target="_blank" rel="noopener noreferrer">
           Full source text           
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -277,23 +291,26 @@
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+        </div>
       </article>
 
       <!-- Project 3 -->
       <article class="project-card">
         <p class="project-card-badge">Project 3</p>
         <h3 class="project-card-title">Derechos de Autor e Inteligencia Artificial<br><span>esp-MEX → eng-USA evaluation</span></h3>
-        <hr>
         <p class="project-card-summary">
           This text is legal commentary from a Mexican law firm examining how the Federal Law on Copyright (LFDA) fails to address AI-assisted authorship, with two proposed institutional reforms. We evaluated an adapted version of the original Spanish.
         </p>
+
+        <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
+
+        <div class="about-expandable">
         <p class="assets-card-summary"><strong>Subdomains:</strong> Intellectual property, Mexican law, AI and copyright</p>
         <p class="assets-card-summary"><strong>Text type:</strong> Legal commentary</p>
         <p class="assets-card-summary"><strong>Purpose:</strong> Informative</p>
         <p class="assets-card-summary"><strong>Author perspective:</strong> Legal professional</p>
         <p class="assets-card-summary"><strong>Audience:</strong> Government, Policy makers</p>
         <p class="assets-card-summary"><strong>Content complexities:</strong> The text blends legal, academic, and essayistic registers that must remain distinguishable throughout. Rhetorical question sequences function as cumulative discursive units rather than independent sentences. The Dark Forest Theory and Turing Test/TTR are introduced as analogies and then recalled as structural through-lines, requiring consistent terminology across distant passages to preserve their rhetorical weight.</p>
-        <hr>
         <p class="project-card-summary">
           <strong>Note:</strong> We did not use the English translation provided within a PDF version of this content. Instead, a target text was produced internally.
         </p>
@@ -309,16 +326,20 @@
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+        </div>
       </article>
 
       <!-- Project 2 -->
       <article class="project-card">
         <p class="project-card-badge">Project 2</p>
         <h3 class="project-card-title">WIPO: Patent Landscape Report - Generative Artificial Intelligence (GenAI)<br><span>eng-intl → esp-LATAM evaluation</span></h3>
-        <hr>
         <p class="project-card-summary">
           This project evaluates a translated secion of the WIPO Patent Landscape Report on Generative AI, which covers the rapid growth of patent activity following the launch of ChatGPT, covering technological drivers and the expanding range of real-world applications.
         </p>
+        
+        <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
+
+        <div class="about-expandable">
         <p class="assets-card-summary"><strong>Subdomains:</strong> Intellectual property, machine learning architectures, corporate R&D, patent analytics</p>
         <p class="assets-card-summary"><strong>Text type:</strong> Technical report</p>
         <p class="assets-card-summary"><strong>Purpose:</strong> Informative</p>
@@ -338,16 +359,20 @@
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+        </div>
       </article>
 
       <!-- Project 1 -->
       <article class="project-card">
         <p class="project-card-badge">Project 1</p>
         <h3 class="project-card-title">Inteligencia Artificial Generativa integrada al ecosistema digital<br><span>esp-LATAM → eng-USA evaluation</span></h3>
-        <hr>
         <p class="project-card-summary">
           This project evaluates a section of a translation of a Spanish-language academic paper on algorithmic governmentality. The source text covers the technical foundations of large language models and contextualizes how AI is being integrated into digital ecosystems across industries.
         </p>
+
+        <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
+
+        <div class="about-expandable">
         <p class="assets-card-summary"><strong>Subdomains:</strong> Digital platforms, communication studies, political economy of technology, technical infrastructure of AI</p>
         <p class="assets-card-summary"><strong>Text type:</strong> Academic article</p>
         <p class="assets-card-summary"><strong>Purpose:</strong> Informative</p>
@@ -367,6 +392,7 @@
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+        </div>
       </article>
 
     </div>
@@ -382,10 +408,13 @@
       <article class="project-card">
         <p class="project-card-badge">Project 0</p>
         <h3 class="project-card-title">AI Could Actually Help Rebuild The Middle Class<br><span>eng-USA → esp-LATAM evaluation</span></h3>
-        <hr>
         <p class="project-card-summary">
           This article (via NOEMA) discusses the potential of AI to continue the upward evolution of human "expertise" and compares the current moment to the industrial revolution, which also sparked fears of mass unemployment but ultimately led to the creation of new jobs and industries.
         </p>
+
+        <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
+
+        <div class="about-expandable">
         <p class="assets-card-summary"><strong>Subdomains:</strong> Future of work, expertise, industrialization, technological revolution, AI-augmented work</p>
         <p class="assets-card-summary"><strong>Text type:</strong> Opinion/essay</p>
         <p class="assets-card-summary"><strong>Purpose:</strong> Informative</p>
@@ -393,7 +422,6 @@
         <p class="assets-card-summary"><strong>Audience:</strong> General educated public</p>
         <p class="assets-card-summary"><strong>Content complexities:</strong> The text addresses a "white collar" audience in the U.S. who may be anxious about the impact of AI on their jobs with a tone that is both conversational and aspirational. Although the primary purpose is to inform, i.e. to recount the impact of the industrial revolution on jobs and to explain how AI could have a similar impact, the reassuring tone also gives the text persuasive undertones. The Spanish version should be adapted to speak to a Latin American audience with a similar socioeconomic profile and similar anxieties about the future of work. U.S. centric references may need reformulation to account for the fact that the U.S. job market is one that Latin American readers may aspire to, but that they may not be currently part of.
         </p>
-        <hr>
         <span class="project-card-summary"><a class="project-card-link" href="https://www.noemamag.com/how-ai-could-help-rebuild-the-middle-class/" target="_blank" rel="noopener noreferrer">
           Full source text           
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -401,18 +429,20 @@
           </svg>
         </a></span>
         <a class="project-card-link-free">
-          No agreement report has been generated for this project, as annotators are first introduced the MQM typology we'll apply here.
+          No agreement report has been generated for this project, as annotators are first introduced to the MQM typology we apply here.
         </a>
+        </div>
       </article>
 
       <!-- Label Studio Account -->
       <article class="project-card">
         <p class="project-card-badge">Account Creation Project</p>
         <h3 class="project-card-title">Translation Error Annotation (MQM)<br><span>eng evaluation</span></h3>
-        <hr>
         <p class="project-card-summary">
           This short text (~150 words) introduces the Multidimensional Quality Metrics (MQM) framework and lists its translation error dimensions. Upon receiving a Label Studio account, annotators use this project to practice navigating the annotation interface and applying dimension and error type labels to a text.
         </p>
+
+        <button class="about-toggle">Start </button>
       </article>
 
     </div>
@@ -434,9 +464,8 @@
   </footer>
 
   <script>
-    function toggleAbout() {
-      const body = document.getElementById('about-body');
-      const btn  = document.getElementById('about-toggle');
+    function toggleExpand(btn) {
+      const body = btn.nextElementSibling;
       const open = body.classList.toggle('open');
       btn.textContent = open ? 'Show less ▴' : 'Show more ▾';
     }
