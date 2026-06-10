@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TQE-2026-1-Project5-Compare – Translation Quality Comparison – 2026-06-10</title>
+  <style>
+    body        { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                   max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem;
+                   color: #222; line-height: 1.55; }
+    h1          { border-bottom: 3px solid #444; padding-bottom: .5rem; }
+    h2          { color: #333; margin-top: .5rem; margin-bottom: .5rem; }
+    h3          { color: #555; }
+    .meta       { color: #666; font-size: .9rem; margin-bottom: 2rem; }
+    .section-desc { color: #555; font-style: italic; font-size: .92rem;
+                     margin: .4rem 0 1rem 0; }
+    section     { background: #fafafa; border: 1px solid #e0e0e0;
+                   border-radius: 6px; padding: 1.2rem 1.5rem;
+                   margin-bottom: 2rem; }
+    .table-wrap { overflow-x: auto; margin-top: .5rem; }
+    table       { border-collapse: collapse; white-space: nowrap; width: 100%; }
+    th, td      { border: 1px solid #ddd; padding: .35rem .7rem; text-align: left; }
+    thead tr    { background: #f0f0f0; }
+    .comment-block { border-left: 3px solid #ccc; padding: .5rem 1rem;
+                      margin: .75rem 0; background: #fff; }
+    .comment-block p { margin: .3rem 0; }
+  </style>
+</head>
+<body>
+  <h1>TQE-2026-1-Project5-Compare – Translation Quality Comparison Report</h1>
+  <p class="meta">
+    Round date: 2026-06-10 &nbsp;|&nbsp;
+    Conditions: Prompt vs. NoPrompt &nbsp;|&nbsp;
+    Total annotations: 4
+  </p>
+  
+<section>
+  <h2>Executive Summary</h2>
+  <p class="section-desc">Key metrics for each translation condition. Span F1 and Cohen's κ reflect annotator agreement, indicating how much the evaluation data can be trusted for that condition.Cohen's κ measures category label agreement between annotators, but only on overlapping spans where they already agreed there was an error (the spans identified by Span F1).</p>
+  <div class="section-body"><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Annotators</th><th>Total Spans</th><th>Mean Correspondence</th><th>Mean Readability</th><th>Span F1</th><th>Mean Cohen's κ</th></tr></thead><tbody><tr><td style='font-weight:bold'>Prompt</td><td>2</td><td>83</td><td>3.00</td><td>2.00</td><td>0.563</td><td>0.786 (Substantial)</td></tr><tr><td style='font-weight:bold'>NoPrompt</td><td>2</td><td>86</td><td>2.00</td><td>1.00</td><td>0.495</td><td>0.365 (Fair)</td></tr></tbody></table></div><h3 style='margin-top:1.5rem'>Metric Summary</h3><div class='table-wrap'><table><thead><tr><th>Metric</th><th>Favors</th></tr></thead><tbody><tr><td>Mean correspondence (higher = better)</td><td>Prompt</td></tr><tr><td>Mean readability (higher = better)</td><td>Prompt</td></tr><tr><td>Total spans flagged (fewer = better)</td><td>Prompt</td></tr><tr><td>Span F1 — annotator reliability (higher = more trustworthy data)</td><td>Prompt</td></tr><tr><td>Cohen's κ — annotator reliability (higher = more trustworthy data)</td><td>Prompt</td></tr></tbody></table></div></div>
+</section>
+
+  
+<section>
+  <h2>Correspondence &amp; Readability Ratings</h2>
+  <p class="section-desc">Holistic evaluator ratings on a 1–4 scale. Correspondence measures accuracy relative to the source; readability measures fluency and naturalness in the target language.</p>
+  <div class="section-body"><h3>Combined</h3><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Mean Correspondence</th><th>Mean Readability</th></tr></thead><tbody><tr><td style='font-weight:bold'>Prompt</td><td>3.00</td><td>2.00</td></tr><tr><td style='font-weight:bold'>NoPrompt</td><td>2.00</td><td>1.00</td></tr></tbody></table></div><h3>Correspondence</h3><div class='table-wrap'><table><thead><tr><th>Translation</th><th>N ratings</th><th>Mean</th><th>Median</th><th>Min</th><th>Max</th><th>Distribution</th></tr></thead><tbody><tr><td style='font-weight:bold'>Prompt</td><td>2</td><td>3.00</td><td>3.0</td><td>3</td><td>3</td><td>3:2</td></tr><tr><td style='font-weight:bold'>NoPrompt</td><td>2</td><td>2.00</td><td>2.0</td><td>2</td><td>2</td><td>2:2</td></tr></tbody></table></div><h3>Readability</h3><div class='table-wrap'><table><thead><tr><th>Translation</th><th>N ratings</th><th>Mean</th><th>Median</th><th>Min</th><th>Max</th><th>Distribution</th></tr></thead><tbody><tr><td style='font-weight:bold'>Prompt</td><td>2</td><td>2.00</td><td>2.0</td><td>1</td><td>3</td><td>1:1 | 3:1</td></tr><tr><td style='font-weight:bold'>NoPrompt</td><td>2</td><td>1.00</td><td>1.0</td><td>1</td><td>1</td><td>1:2</td></tr></tbody></table></div></div>
+</section>
+
+  
+<section>
+  <h2>Error Volume &amp; Distribution</h2>
+  <p class="section-desc">Total error spans flagged by evaluators, broken down by MQM error category and impact level. Higher span counts indicate more identified errors in that translation.</p>
+  <div class="section-body"><p><em>Number of error spans marked by each evaluator per document.</em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Document ID</th><th>Annotator ID</th><th>Spans Marked</th></tr></thead><tbody><tr><td style='font-weight:bold'>Prompt</td><td>32</td><td>58</td><td>49</td></tr><tr><td style='font-weight:bold'>Prompt</td><td>32</td><td>61</td><td>34</td></tr><tr><td style='font-weight:bold'>NoPrompt</td><td>31</td><td>61</td><td>38</td></tr><tr><td style='font-weight:bold'>NoPrompt</td><td>31</td><td>58</td><td>48</td></tr></tbody></table></div><p><em>Total error spans flagged per translation, broken down by MQM error category. Higher counts indicate more identified errors of that type.</em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Total Spans</th><th>Accuracy</th><th>Audience Appropriateness</th><th>Linguistic Conventions</th><th>Locale Conventions</th><th>Style</th><th>Terminology</th></tr></thead><tbody><tr><td style='font-weight:bold'>Prompt</td><td>83</td><td>18</td><td>6</td><td>20</td><td>0</td><td>31</td><td>8</td></tr><tr><td style='font-weight:bold'>NoPrompt</td><td>86</td><td>20</td><td>7</td><td>6</td><td>2</td><td>38</td><td>13</td></tr></tbody></table></div><p><em>Error spans broken down by impact level. Strong errors have the greatest effect on translation quality.</em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Strong</th><th>Moderate</th><th>Neutral</th><th>Showstopper</th></tr></thead><tbody><tr><td style='font-weight:bold'>Prompt</td><td>24</td><td>49</td><td>9</td><td>0</td></tr><tr><td style='font-weight:bold'>NoPrompt</td><td>26</td><td>49</td><td>5</td><td>3</td></tr></tbody></table></div><p><em>Lead time is active working time recorded by Label Studio. Review time is total elapsed time from opening to submission.</em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Mean Lead Time (min)</th><th>Min Lead Time (min)</th><th>Max Lead Time (min)</th><th>Total Lead Time (min)</th></tr></thead><tbody><tr><td style='font-weight:bold'>Prompt</td><td>125.6</td><td>117.4</td><td>133.9</td><td>251.3</td></tr><tr><td style='font-weight:bold'>NoPrompt</td><td>157.2</td><td>117.1</td><td>197.4</td><td>314.5</td></tr></tbody></table></div></div>
+</section>
+
+  
+<section>
+  <h2>Annotator Reliability</h2>
+  <p class="section-desc">Span F1 measures partial overlap agreement between annotator span boundaries. Cohen's κ measures agreement on error category labels for overlapping spans. Production deployment target for both metrics: ≥0.60. Low reliability in one condition means its quality metrics should be interpreted with caution.</p>
+  <div class="section-body"><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Span F1</th><th>F1 target (≥0.60)</th><th>Mean Cohen's κ</th><th>κ interpretation</th><th>κ target (≥0.60)</th></tr></thead><tbody><tr><td style='font-weight:bold'>Prompt</td><td>0.563</td><td>✗</td><td>0.786</td><td>Substantial</td><td>✓</td></tr><tr><td style='font-weight:bold'>NoPrompt</td><td>0.495</td><td>✗</td><td>0.365</td><td>Fair</td><td>✗</td></tr></tbody></table></div></div>
+</section>
+
+  
+<section>
+  <h2>Qualitative Evaluator Comments</h2>
+  <p class="section-desc">Free-text comments entered by evaluators for document issues, correspondence, and readability. All comments are included as submitted.</p>
+  <div class="section-body"><h3>Prompt</h3><div class='comment-block'><strong>Annotator 58</strong><p><em>Document issues:</em> El principal error fue la naturalidad, la manera en que formula las preguntas y que mantuvo todas las referencias en los ejemplos textuales (incluso puedo argumentar que lo del presidente estadounidense no es un buen ejemplo). También integra un sesgo irónico con la introducción de comillas o las negritas en ciertas áreas.</p><p><em>Correspondence:</em> Tiene todos los elementos del original y aunque presente adiciones los errores de terminología no son tan graves para no entender el concepto básico. Lo que sí es medio inaceptable son los errores de genero que tiene aun cuando el referente se encuentra en la misma oración.</p><p><em>Readability:</em> Como una traducción funcional cumple la misión de poder leer el texto, pero de eso a que cumpla realmente con la naturalidad requerida para ser un texto persuasivo y con buen carácter argumentativo flaquea mucho.</p></div><div class='comment-block'><strong>Annotator 61</strong><p><em>Document issues:</em> Problemas de precisión y naturalidad.</p></div><h3>NoPrompt</h3><div class='comment-block'><strong>Annotator 61</strong><p><em>Document issues:</em> Los errores más frecuentes son de estilo, de naturalidad. </p></div><div class='comment-block'><strong>Annotator 58</strong><p><em>Document issues:</em> Es una traducción tan transparente que confunde. Puedes sentir el inglés que está detrás de las construcciones, el vocabulario y las conjugaciones, pero las ideas se escapan completamente. El texto es incapaz de construir una narrativa interesante o convincente, solo es tedioso y confuso.</p><p><em>Correspondence:</em> Mantiene todas las ideas que el original, pero la ejecución con la que son presentadas difumina el mensaje. Tiene una prosa muy básica y aún así utiliza palabras de alto registro que confunden al lector. </p><p><em>Readability:</em> El verbo “poder” necesita que le pague horas extras. Se utilizó alrededor de 15 ocasiones lo que disminuyo la calidad de la lectura. Hay poca variación de estructuras, baja diversidad de vocabulario y con oraciones tan cortas el seguimiento de ideas es tedioso. Sí solo hubiera leído esta traducción no habría entendido cómo es que los algoritmos desarrollan las enfermedades mentales, es una pésima lectura por si sola.</p></div></div>
+</section>
+
+</body>
+</html>
