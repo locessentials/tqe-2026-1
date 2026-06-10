@@ -40,10 +40,38 @@
           <br><br>
           The projects we evaluated are in the domain of generative AI, and we use a customized subset of the MQM error typology. We often choose a selection of and edited the source texts so that they were in the range of ~1200 words per project. Here, we share the full source text for each project. Evaluators had linguistic assets of project specifications, an MQM decision tree, and MQM error examples at their disposal as a resource as they completed their evaluation tasks.
           <br><br>
-          After each project, we measure annotator agreement on five levels: span detection, span boundaries, error category, subcategory, and impact rating; findings are used to calibrate the team/systems for the next project. Reports are generated from a <a href="https://github.com/locessentials/translation-quality-evaluation/blob/main/6_annotator_agreement/Translation_Annotator_Agreement.ipynb" target="_blank">Jupyter notebook</a> and linked below. The goal is to reach deployable, consistent annotations that can be used to train evaluators, give feedback to translators, and fine-tune LLM-based quality evaluation systems.
+          After each project, we measure annotator agreement on five levels: span detection, span boundaries, error category, subcategory, and impact rating; findings are used to calibrate the team/systems for the next project. Reports are generated from a Jupyter notebook available within our <a href="https://github.com/locessentials/translation-quality-evaluation/" target="_blank">Translation Quality Evaluation repository</a> and linked below. The goal is to reach deployable, consistent annotations that can be used to train evaluators, give feedback to translators, and fine-tune LLM-based quality evaluation systems.
           <br><br>
           You can learn about our findings and the broader initial context for this research in our forthcoming paper, "Can an Old Dog Be Taught New Tricks? Taking LLMs Beyond Sentence Level Automatic Translation", which will be published in the proceedings of HCI International 2026. We will link the paper here when it is available.
         </p>
+      </div>
+    </section>
+
+    <!-- Outcomes -->
+    <section class="about" aria-labelledby="about-label">
+      <p class="section-label" id="about-label">Study Outcomes</p>
+      <p>
+        We've produced a number of reports from which we can make conjectures about translation quality and interannotator agreement from this study. For starters, along with the interannotator agreement reports that we used to guide calibration sessions after the completion of each project, we've provided translation quality comparison reports where two translations of the same text were evaluated. We've also provided an interannotator agreement progress report that tracks changes in agreement across the English to Spanish translation evaluations we performed over the course of this research.
+      </p>
+
+      <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
+
+      <div class="about-expandable">
+        <p>
+          In project 5, we tested a specifications-informed translation versus one produced from a simple "just translate this" prompt. Our conjecture based on the results from this project is that specifications indeed help LLMs to produce better translations. 
+          <br><br>
+          In projects 6 and 7, we tested corpus-informed translations to those produced without any examples from our corpus. Here, the outcomes were more mixed, demonstrating that this departure from traditional translation-memory informed translation needs further experimentation and calibration.
+          <br><br>
+          We performed English to Spanish evaluations for projects 2, 4, and 5-7. Our interannotator agreement progress report shows how agreement evolved as we completed the cycle of project evaluation > agreement measurement > calibration session > next project evaluation, and so on. Here, we observe meaningful improvement over the course of this research, leading us to believe that our overall quality management system is effective at harmonizing the work of a group of evaluators, particularly in terms of error category agreement.
+          <br><br>
+          Project specific reports are linked under each project, and the interannotator agreement progress report in this section. If you have questions about the reports or our research, please reach out to our project leader at <a href="mailto:alainambrandt@gmail.com">alainambrandt@gmail.com</a>.
+        </p>
+        <a class="project-card-link" href="TQE-2026-1-Outcomes.html" target="_blank">
+          View Interannotator Agreement Progress report
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
     </section>
 
@@ -125,7 +153,7 @@
           </svg>
         </a></span>
         <a class="project-card-link-free">
-          We did not conduct evaluations of this project, so there is not agreement report. We've included this text here as an additional example of a source text for this study.
+          We did not conduct evaluations of this project, so there is no agreement report. We've included this additional example project to give a sense of the source texts that we are working with in this study.
         </a>
         </div>
       </article>
