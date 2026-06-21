@@ -24,6 +24,13 @@
     .comment-block { border-left: 3px solid #ccc; padding: .5rem 1rem;
                       margin: .75rem 0; background: #fff; }
     .comment-block p { margin: .3rem 0; }
+    .stat-card  { display: inline-block; background: #fff; border: 1px solid #ddd;
+                   border-radius: 8px; padding: 1rem 2.2rem; margin: 0 .8rem 1.2rem 0;
+                   text-align: center; }
+    .stat-label { font-size: .8rem; color: #666; text-transform: uppercase;
+                   letter-spacing: .04em; margin-bottom: .3rem; }
+    .stat-value { font-size: 2.6rem; font-weight: 700; color: #222; line-height: 1; }
+    .stat-sublabel { font-size: .82rem; color: #666; margin-top: .3rem; }
   </style>
 </head>
 <body>
@@ -36,8 +43,8 @@
   
 <section>
   <h2>Executive Summary</h2>
-  <p class="section-desc">Key metrics for each translation condition. Span F1 and Cohen's κ reflect annotator agreement, indicating how much the evaluation data can be trusted for that condition.Cohen's κ measures category label agreement between annotators, but only on overlapping spans where they already agreed there was an error (the spans identified by Span F1).</p>
-  <div class="section-body"><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Annotators</th><th>Total Spans</th><th>Mean Correspondence</th><th>Mean Readability</th><th>Span F1</th><th>Mean Cohen's κ</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>2</td><td>44</td><td>2.50</td><td>2.50</td><td>0.553</td><td>0.745 (Substantial)</td></tr><tr><td style='font-weight:bold'>Context</td><td>2</td><td>41</td><td>2.50</td><td>3.00</td><td>0.558</td><td>0.722 (Substantial)</td></tr></tbody></table></div><h3 style='margin-top:1.5rem'>Metric Summary</h3><div class='table-wrap'><table><thead><tr><th>Metric</th><th>Favors</th></tr></thead><tbody><tr><td>Mean correspondence (higher = better)</td><td>Tie</td></tr><tr><td>Mean readability (higher = better)</td><td>Context</td></tr><tr><td>Total spans flagged (fewer = better)</td><td>Context</td></tr><tr><td>Span F1 — annotator reliability (higher = more trustworthy data)</td><td>Context</td></tr><tr><td>Cohen's κ — annotator reliability (higher = more trustworthy data)</td><td>NoContext</td></tr></tbody></table></div></div>
+  <p class="section-desc">Key metrics for each translation condition. Span F1 and Category Agreement (Balanced) reflect annotator agreement, indicating how much the evaluation data can be trusted for that condition. Category Agreement (Balanced) measures how often annotators assigned the same error category to spans they both flagged, combining each annotator's match rate via harmonic mean (F1-style) rather than a chance-corrected coefficient like Cohen's κ — chosen because κ becomes unstable and hard to interpret with the skewed category distributions and small per-condition span counts typical of this data.</p>
+  <div class="section-body"><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Annotators</th><th>Total Spans</th><th>Mean Correspondence</th><th>Mean Readability</th><th>Span F1</th><th>Category Agreement (Balanced)</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>2</td><td>44</td><td>2.50</td><td>2.50</td><td>0.553</td><td>0.455 (Moderate)</td></tr><tr><td style='font-weight:bold'>Context</td><td>2</td><td>41</td><td>2.50</td><td>3.00</td><td>0.558</td><td>0.390 (Fair)</td></tr></tbody></table></div><h3 style='margin-top:1.5rem'>Metric Summary</h3><div class='table-wrap'><table><thead><tr><th>Metric</th><th>Favors</th></tr></thead><tbody><tr><td>Mean correspondence (higher = better)</td><td>NoContext</td></tr><tr><td>Mean readability (higher = better)</td><td>Context</td></tr><tr><td>Total spans flagged (fewer = better)</td><td>Context</td></tr><tr><td>Span F1 — annotator reliability (higher = more trustworthy data)</td><td>Context</td></tr><tr><td>Category Agreement (Balanced) — annotator reliability (higher = more trustworthy data)</td><td>NoContext</td></tr></tbody></table></div></div>
 </section>
 
   
@@ -51,14 +58,34 @@
 <section>
   <h2>Error Volume &amp; Distribution</h2>
   <p class="section-desc">Total error spans flagged by evaluators, broken down by MQM error category and impact level. Higher span counts indicate more identified errors in that translation.</p>
-  <div class="section-body"><p><em>Number of error spans marked by each evaluator per document.</em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Document ID</th><th>Annotator ID</th><th>Spans Marked</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>35</td><td>61</td><td>20</td></tr><tr><td style='font-weight:bold'>NoContext</td><td>35</td><td>58</td><td>24</td></tr><tr><td style='font-weight:bold'>Context</td><td>36</td><td>61</td><td>17</td></tr><tr><td style='font-weight:bold'>Context</td><td>36</td><td>58</td><td>24</td></tr></tbody></table></div><p><em>Total error spans flagged per translation, broken down by MQM error category. Higher counts indicate more identified errors of that type.</em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Total Spans</th><th>Accuracy</th><th>Linguistic Conventions</th><th>Style</th><th>Terminology</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>44</td><td>18</td><td>5</td><td>20</td><td>1</td></tr><tr><td style='font-weight:bold'>Context</td><td>41</td><td>13</td><td>9</td><td>18</td><td>1</td></tr></tbody></table></div><p><em>Error spans broken down by impact level. Strong errors have the greatest effect on translation quality.</em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Strong</th><th>Moderate</th><th>Neutral</th><th>Showstopper</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>3</td><td>29</td><td>6</td><td>4</td></tr><tr><td style='font-weight:bold'>Context</td><td>4</td><td>32</td><td>2</td><td>3</td></tr></tbody></table></div><p><em>Lead time is active working time recorded by Label Studio.</em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Mean Lead Time (min)</th><th>Min Lead Time (min)</th><th>Max Lead Time (min)</th><th>Total Lead Time (min)</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>76.8</td><td>58.6</td><td>95.0</td><td>153.6</td></tr><tr><td style='font-weight:bold'>Context</td><td>44.5</td><td>34.2</td><td>54.8</td><td>89.0</td></tr></tbody></table></div></div>
+  <div class="section-body"><p><em>Number of error spans marked by each evaluator per document.</em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Document ID</th><th>Annotator ID</th><th>Spans Marked</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>35</td><td>61</td><td>20</td></tr><tr><td style='font-weight:bold'>NoContext</td><td>35</td><td>58</td><td>24</td></tr><tr><td style='font-weight:bold'>Context</td><td>36</td><td>61</td><td>17</td></tr><tr><td style='font-weight:bold'>Context</td><td>36</td><td>58</td><td>24</td></tr></tbody></table></div><p><em>Total error spans flagged per translation, broken down by MQM error category. Higher counts indicate more identified errors of that type.</em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Total Spans</th><th>Accuracy</th><th>Linguistic Conventions</th><th>Style</th><th>Terminology</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>44</td><td>18</td><td>5</td><td>20</td><td>1</td></tr><tr><td style='font-weight:bold'>Context</td><td>41</td><td>13</td><td>9</td><td>18</td><td>1</td></tr></tbody></table></div><p><em>Error spans broken down by impact level. Strong errors have the greatest effect on translation quality.</em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Strong</th><th>Moderate</th><th>Neutral</th><th>Showstopper</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>3</td><td>29</td><td>6</td><td>4</td></tr><tr><td style='font-weight:bold'>Context</td><td>4</td><td>32</td><td>2</td><td>3</td></tr></tbody></table></div><p><em>Lead time is active working time recorded by Label Studio. </em></p><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Mean Lead Time (min)</th><th>Min Lead Time (min)</th><th>Max Lead Time (min)</th><th>Total Lead Time (min)</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>76.8</td><td>58.6</td><td>95.0</td><td>153.6</td></tr><tr><td style='font-weight:bold'>Context</td><td>44.5</td><td>34.2</td><td>54.8</td><td>89.0</td></tr></tbody></table></div></div>
 </section>
 
   
 <section>
   <h2>Annotator Reliability</h2>
-  <p class="section-desc">Span F1 measures partial overlap agreement between annotator span boundaries. Cohen's κ measures agreement on error category labels for overlapping spans. Production deployment target for both metrics: ≥0.60. Low reliability in one condition means its quality metrics should be interpreted with caution.</p>
-  <div class="section-body"><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Span F1</th><th>F1 target (≥0.60)</th><th>Mean Cohen's κ</th><th>κ interpretation</th><th>κ target (≥0.60)</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>0.553</td><td>✗</td><td>0.745</td><td>Substantial</td><td>✓</td></tr><tr><td style='font-weight:bold'>Context</td><td>0.558</td><td>✗</td><td>0.722</td><td>Substantial</td><td>✓</td></tr></tbody></table></div></div>
+  <p class="section-desc">Span F1 measures partial overlap agreement between annotator span boundaries. Category Agreement (Balanced) measures agreement on error category labels for spans that overlap between annotators, combined across annotators via harmonic mean (F1-style). Production deployment target for both metrics: ≥0.60. Low reliability in one condition means its quality metrics should be interpreted with caution.</p>
+  <div class="section-body">
+    <div class="stat-card">
+      <div class="stat-label">NoContext — Span F1</div>
+      <div class="stat-value">0.55</div>
+      <div class="stat-sublabel">Below target (<0.60)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">NoContext — Category Agreement (Balanced)</div>
+      <div class="stat-value">0.45</div>
+      <div class="stat-sublabel">Moderate</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Context — Span F1</div>
+      <div class="stat-value">0.56</div>
+      <div class="stat-sublabel">Below target (<0.60)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Context — Category Agreement (Balanced)</div>
+      <div class="stat-value">0.39</div>
+      <div class="stat-sublabel">Fair</div>
+    </div><div class='table-wrap'><table><thead><tr><th>Translation</th><th>Span F1</th><th>F1 target (≥0.60)</th><th>Category Agreement (Balanced)</th><th>Interpretation</th><th>Target (≥0.60)</th><th>Spans reused</th><th>Total reuse</th></tr></thead><tbody><tr><td style='font-weight:bold'>NoContext</td><td>0.553</td><td>✗</td><td>0.455</td><td>Moderate</td><td>✗</td><td>0</td><td>0</td></tr><tr><td style='font-weight:bold'>Context</td><td>0.558</td><td>✗</td><td>0.390</td><td>Fair</td><td>✗</td><td>0</td><td>0</td></tr></tbody></table></div></div>
 </section>
 
   
