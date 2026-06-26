@@ -29,14 +29,14 @@
     <section class="about" aria-labelledby="about-label">
       <p class="section-label" id="about-label">About this Research</p>
       <p>
-        This dashboard tracks inter-annotator agreement for the TQE-2026-1 evaluation project series. This effort has two main objectives: first, to train a team of professional evaluators to produce consistent, deployable annotations of translation quality; and second, to use the annotations to draw conclusions about corpus-informed, document-level automatic translation quality.
+        This dashboard tracks inter-annotator agreement for the TQE-2026-1 evaluation project series. This effort has two main objectives: first, to train a team of professional evaluators to produce consistent, deployable annotations of translation quality; and second, to use the annotations to draw conclusions about corpus-informed, document-level automatic translation quality produced from our Pragmatic Auto-Translator (PAT).
       </p>
 
       <button class="about-toggle" onclick="toggleExpand(this)">Show more ▾</button>
 
       <div class="about-expandable">
         <p>
-          Training phase projects (1-4) serve the primary purpose of training our team of evaluators, i.e. improving inter-annotator agreement. Production phase projects (5-7) provide two generated translations of the same source content, to compare specificiation- and corpus-informed translation to uninformed translation. We also completed onboarding projects (0, -1), where our evaluators were introduced to annotation in Label Studio following the MQM typology. We've included one additional example project here (8) that we did not evaluate, but that is in the same domain and of a similar length to the other projects, to give a sense of the source texts that we are working with in this study.
+          Training phase projects (1-4) serve the primary purpose of training our team of evaluators, i.e. improving inter-annotator agreement. The translations for these projects were largely machine translation using commercial system. Production phase projects (5-7) provide two generated translations of the same source content from our PAT system, to compare specificiation-, corpus-informed translation and uninformed translation. We also completed onboarding projects (0, -1), where our evaluators were introduced to annotation in Label Studio following the MQM typology. We've included one additional example project here (8) that we did not evaluate, but that is in the same domain and of a similar length to the other projects, to give a sense of the source texts that we are working with in this study.
           <br><br>
           The projects we evaluated are in the domain of generative AI, and we use a customized subset of the MQM error typology. We often choose a selection of and edited the source texts so that they were in the range of ~1200 words per project. Here, we share the full source text for each project. Evaluators had linguistic assets of project specifications, an MQM decision tree, and MQM error examples at their disposal as a resource as they completed their evaluation tasks.
           <br><br>
@@ -58,11 +58,11 @@
 
       <div class="about-expandable">
         <p>
-          In project 5, we tested a specifications-informed translation versus one produced from a simple "just translate this" prompt. Our conjecture based on the results from this project is that specifications indeed help LLMs to produce better translations. 
+          In project 5, we compared a specifications-informed translation from our PAT system prompt against one produced from a simple "just translate this" prompt. Our conjecture based on the results from this project is that specifications indeed help LLMs to produce better translations.
           <br><br>
-          In projects 6 and 7, we tested corpus-informed translations to those produced without any examples from our corpus. Here, the outcomes were more mixed, demonstrating that this departure from traditional translation-memory informed translation needs further experimentation and calibration.
+          In projects 6 and 7, we tested corpus-informed translations to those produced just from our PAT system prompt (i.e. specifications-informed). Here, the outcomes were more mixed, demonstrating that this departure from traditional translation-memory informed translation needs further experimentation and calibration.
           <br><br>
-          We performed English to Spanish evaluations for projects 2, 4, and 5-7. Our interannotator agreement progress report shows how agreement evolved as we completed the cycle of project evaluation > agreement measurement > calibration session > next project evaluation, and so on. Here, we observe meaningful improvement over the course of this research, leading us to believe that our overall quality management system is effective at harmonizing the work of a group of evaluators, particularly in terms of error category agreement.
+          We performed English to Spanish evaluations for projects 2, 4, and 5-7. Our interannotator agreement progress report shows how agreement evolved as we completed the cycle of project evaluation > agreement measurement > calibration session > next project evaluation, and so on.
           <br><br>
           Project specific reports are linked under each project, and the interannotator agreement progress report in this section. If you have questions about the reports or our research, please reach out to our project leader at <a href="mailto:alainambrandt@gmail.com">alainambrandt@gmail.com</a>.
         </p>
@@ -97,23 +97,23 @@
 
       <!-- Glossary & Examples -->
       <article class="assets-card">
-        <p class="assets-card-badge">Guidelines & Error Examples</p>
+        <p class="assets-card-badge">Guidelines</p>
         <h3 class="assets-card-title">MQM Decision Tree<br></h3>
         <p class="assets-card-summary">
           Decision guide for classifying translation issues into our error categories and types.
         </p>
-        <a class="assets-card-link" href="https://docs.google.com/document/d/1XKov81S7xEF08Jp6bVL0u6DPF7IAKnGj0RmDZdD5yVA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <a class="assets-card-link" href="https://drive.google.com/file/d/1OwFO2eWljX1Z-pI2VVQvjzU0L2Pj648u/view?usp=sharing" target="_blank" rel="noopener noreferrer">
           View decision tree
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
-        <h3 class="assets-card-title">MQM Error Examples<br></h3>
+        <h3 class="assets-card-title">PAT System Prompt<br></h3>
         <p class="assets-card-summary">
-          Examples of errors that could be tagged with multiple labels, and the classification we've agreed on for this project.
+          The system prompt from which translations were produced for projects 5-7.
         </p>
-        <a class="assets-card-link" href="https://docs.google.com/document/d/1OOMu8uVg4nURQ2aSVINkc1yHWzNkZCU6X3qbzV01Ht0/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-          View example errors
+        <a class="assets-card-link" href="https://drive.google.com/file/d/1rpk-RKfgjmv3sR9BaT-3Rw-UsL34g2o2/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          View system prompt
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -182,13 +182,13 @@
           </svg>
         </a></span>
         <a class="project-card-link" href="TQE-2026-1-Project-7-Text1.html" target="_blank">
-          View Agreement report - Text 1 (No corpus context)
+          View Agreement report - Text 1 (System prompt)
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
         <a class="project-card-link" href="TQE-2026-1-Project-7-Text2.html" target="_blank">
-          View Agreement report - Text 2 (Corpus context)
+          View Agreement report - Text 2 (System prompt + Corpus context)
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -232,7 +232,7 @@
           </svg>
         </a></span>
         <a class="project-card-link" href="TQE-2026-1-Project-6-Text1.html" target="_blank">
-          View Agreement report - Text 1 (Corpus context)
+          View Agreement report - Text 1 (System prompt + Corpus context)
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -244,7 +244,7 @@
           </svg>
         </a>
         <a class="project-card-link" href="TQE-2026-1-Project-6-Text2.html" target="_blank">
-          View Agreement report - Text 2 (No corpus context)
+          View Agreement report - Text 2 (System prompt)
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
