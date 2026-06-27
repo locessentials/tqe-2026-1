@@ -9,3 +9,5 @@ You can learn about our findings and the broader initial context for this resear
 To review the date, just double click on index.html.
 
 License: Creative Commons Attribution 4.0 International
+
+For more information, or help using this repo: alainambrandt@gmail.com
